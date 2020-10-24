@@ -1,0 +1,72 @@
+@import "../assets/sass/variables";
+
+header{
+    width: 100%;
+		background: $primary;
+		display: flex;
+		justify-content: center;
+		.container{
+			max-width: 1440px;
+			width: 100%;
+			display: flex;
+			justify-content: flex-start;
+			img{
+				width: 100%;
+				max-width: 240px; 
+				padding:  5.48px;
+			}
+		}
+}
+
+
+footer{
+	width: 100%;
+	.line-footer{
+		background: $primary;
+		height: 3px;
+		border: solid 7px  $primary;
+		margin-bottom: 117px;
+	}
+	p{
+		background: $footer-bg;
+		width: 100%;
+		padding: 34px 0;
+		font-family: Roboto;
+		font-size: 14px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: normal;
+		letter-spacing: normal;
+		text-align: center;
+		color: $light-text;
+	}
+}
+
+.search-box{
+	width: 385px;
+	height: 54px;
+	background: $border-line-input;
+	padding-bottom: 3px;
+	border-radius: 5px;
+	margin: 16px 0 36px 0;
+}
+
+form{
+	input{
+		width: 385px;
+		height: 51px;
+		border-radius: 3px;
+		background: #ffffff;
+		border: 0 none;
+		outline: none;
+		font-size: 14px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: normal;
+		letter-spacing: normal;
+		text-align: left;
+		color: #4a4a4a;
+	}
+}

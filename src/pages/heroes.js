@@ -16,7 +16,7 @@ function Heroes() {
 	const [heroes, setHeroes] = useState([])
 	const [changed, setChanged] = useState(false)
 	const [page, setPage] = useState(0)
-	const [searchTerm, setSearchTerm] = useState(null)
+	const [searchTerm, setSearchTerm] = useState('')
 
 	const total = '35'
 	useEffect(() => {
@@ -44,11 +44,13 @@ function Heroes() {
 
 	const resultHeroes = heroes.filter(item => {
 		return Object.keys(item).some(
-			key => item[key].toString().toLowerCase().search(searchTerm) !== -1
+			key =>
+				item[key].toString().toLowerCase().search(searchTerm.toLowerCase()) !==
+				-1
 		)
 	})
 
-	const heroesFilter = !searchTerm ? heroes : resultHeroes
+	const heroesList = searchTerm.length < -1 ? heroes : resultHeroes
 
 	return (
 		<main>
@@ -59,17 +61,17 @@ function Heroes() {
 					<Sort changed={changed} setChanged={setChanged} />
 				</div>
 				<div className='items'>
-					{heroesFilter.map(hero => {
+					{heroesList.map(hero => {
 						return (
-							<Link to={`hero/${hero.id}`}>
-								<div key={hero.id} className='item-border'>
+							<Link key={hero.id} to={`hero/${hero.id}`}>
+								<div className='item-border'>
 									<div className='item'>
 										<img
 											src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
 											alt={hero.name}
 										/>
 										<h2>{hero.name}</h2>
-										<span>{hero.events.items[0]?.name}</span>
+										<span>{hero.id}</span>
 										<hr className='line-name' />
 										<p className='des'>
 											{hero.description.length > 60

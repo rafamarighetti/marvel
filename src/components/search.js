@@ -1,10 +1,14 @@
 import React from 'react'
 
-function Search() {
+const Search = ({ setSearchTerm }) => {
 	return (
 		<div className='search-box'>
 			<form>
-				<input type='text' placeholder='Characters' />
+				<input
+					type='text'
+					placeholder='Characters'
+					onChange={e => setSearchTerm(e.target.value)}
+				/>
 			</form>
 		</div>
 	)

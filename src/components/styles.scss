@@ -57,7 +57,7 @@ form{
 		width: 385px;
 		height: 51px;
 		border-radius: 3px;
-		background: #ffffff;
+		background: $light-bg;
 		border: 0 none;
 		outline: none;
 		font-size: 14px;
@@ -67,6 +67,102 @@ form{
 		line-height: normal;
 		letter-spacing: normal;
 		text-align: left;
-		color: #4a4a4a;
+		color: $light-text;
+	}
+}
+
+.filter{
+	display: flex;
+	align-items: center;
+	margin-left: 38px;
+	margin-top: 30px;
+	display: flex;
+	height: 30px;
+	cursor: pointer;
+	span{
+		display: flex;
+		align-items: center;
+		font-size: 14px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: normal;
+		letter-spacing: normal;
+		text-align: left;
+		color:$light-text;
+		margin: 0 10px;
+	}
+	svg{
+		font-size: 36px;
+		color:$border-item;
+	}
+}
+
+.pagination-box{
+	display: flex;
+	align-items: center;
+	margin: 50px 0 20px 0;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+	color: $border-item;
+	.selected{
+		cursor: pointer;
+		border-bottom: 2px solid $border-line-input;
+		padding:6px 16px;
+		border-radius: 5px;
+		color: $light-text;
+		&:hover{
+			transition: 0.7s;
+			border-bottom: solid 2px $primary;
+			color: $primary;
+		}
+	}
+	.left{
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		margin-right: 8px;
+		font-size: 24px;
+		padding: 8px 0;
+		border-radius: 3px 0  0 3px;
+		border: solid 1px$border-item;
+		background-color:$light-bg;
+		color: $light-text;
+		&:hover{
+			transition: 0.7s;
+			border: solid 1px $primary;
+			color: $primary;
+		}
+	}
+	.right{
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		margin-left: 8px;
+		font-size: 24px;
+		padding: 8px 0;
+		border-radius: 0 3px 3px 0;
+		border: solid 1px $border-item;
+		background-color: $light-bg;
+		color: $light-text;
+		&:hover{
+			transition: 0.7s;
+			border: solid 1px $primary;
+			color: $primary;
+		}	
+	}
+	.disabled{
+		transition: 0.7s;
+		border: solid 1px $border-item !important;
+		color:$border-item !important;
+		cursor: not-allowed;
 	}
 }
